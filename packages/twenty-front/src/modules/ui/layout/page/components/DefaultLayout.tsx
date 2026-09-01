@@ -14,7 +14,9 @@ import { styled } from '@linaria/react';
 import { Outlet } from 'react-router-dom';
 import { themeCssVariables } from 'twenty-ui/theme-constants';
 const StyledLayout = styled.div`
-  background: ${themeCssVariables.grayScale.gray3};
+  background-color: ${themeCssVariables.grayScale.gray3};
+  background-image: radial-gradient(${themeCssVariables.border.color.medium} 1px, transparent 1px);
+  background-size: 22px 22px;
   display: flex;
   flex-direction: column;
   height: calc(100dvh / var(--t-zoom, 1));

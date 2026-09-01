@@ -31,6 +31,10 @@ const StyledAnimatedContainer = styled.div<{
   isExpanded: boolean;
   isResizing: boolean;
 }>`
+  background-color: color-mix(in srgb, ${themeCssVariables.background.primary} 68%, transparent);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(22px) saturate(160%);
+  border-right: 1px solid ${themeCssVariables.border.color.light};
   height: 100%;
   max-height: 100%;
   overflow: hidden;

@@ -31,9 +31,9 @@ export const buildDashboardStandardFlatFieldMetadatas = ({
     context: {
       fieldName: 'id',
       type: FieldMetadataType.UUID,
-      label: i18nLabel(msg({ message: `Id`, context: 'fieldMetadata.label' })),
+      label: i18nLabel(msg({ message: `ID`, context: 'fieldMetadata.label' })),
       description: i18nLabel(
-        msg({ message: `Id`, context: 'fieldMetadata.description' }),
+        msg({ message: `ID`, context: 'fieldMetadata.description' }),
       ),
       icon: 'Icon123',
       isSystem: true,
@@ -53,10 +53,10 @@ export const buildDashboardStandardFlatFieldMetadatas = ({
       fieldName: 'createdAt',
       type: FieldMetadataType.DATE_TIME,
       label: i18nLabel(
-        msg({ message: `Creation date`, context: 'fieldMetadata.label' }),
+        msg({ message: `Дата создания`, context: 'fieldMetadata.label' }),
       ),
       description: i18nLabel(
-        msg({ message: `Creation date`, context: 'fieldMetadata.description' }),
+        msg({ message: `Дата создания`, context: 'fieldMetadata.description' }),
       ),
       icon: 'IconCalendar',
       isSystem: true,
@@ -77,11 +77,11 @@ export const buildDashboardStandardFlatFieldMetadatas = ({
       fieldName: 'updatedAt',
       type: FieldMetadataType.DATE_TIME,
       label: i18nLabel(
-        msg({ message: `Last update`, context: 'fieldMetadata.label' }),
+        msg({ message: `Дата обновления`, context: 'fieldMetadata.label' }),
       ),
       description: i18nLabel(
         msg({
-          message: `Last time the record was changed`,
+          message: `Дата последнего изменения записи`,
           context: 'fieldMetadata.description',
         }),
       ),
@@ -104,7 +104,7 @@ export const buildDashboardStandardFlatFieldMetadatas = ({
       fieldName: 'deletedAt',
       type: FieldMetadataType.DATE_TIME,
       label: i18nLabel(
-        msg({ message: `Deleted at`, context: 'fieldMetadata.label' }),
+        msg({ message: `Дата удаления`, context: 'fieldMetadata.label' }),
       ),
       description: i18nLabel(
         msg({
@@ -154,7 +154,7 @@ export const buildDashboardStandardFlatFieldMetadatas = ({
       fieldName: 'position',
       type: FieldMetadataType.POSITION,
       label: i18nLabel(
-        msg({ message: `Position`, context: 'fieldMetadata.label' }),
+        msg({ message: `Позиция`, context: 'fieldMetadata.label' }),
       ),
       description: i18nLabel(
         msg({
@@ -203,11 +203,11 @@ export const buildDashboardStandardFlatFieldMetadatas = ({
       fieldName: 'createdBy',
       type: FieldMetadataType.ACTOR,
       label: i18nLabel(
-        msg({ message: `Created by`, context: 'fieldMetadata.label' }),
+        msg({ message: `Кем создано`, context: 'fieldMetadata.label' }),
       ),
       description: i18nLabel(
         msg({
-          message: `The creator of the record`,
+          message: `Автор записи`,
           context: 'fieldMetadata.description',
         }),
       ),
@@ -233,11 +233,11 @@ export const buildDashboardStandardFlatFieldMetadatas = ({
       fieldName: 'updatedBy',
       type: FieldMetadataType.ACTOR,
       label: i18nLabel(
-        msg({ message: `Updated by`, context: 'fieldMetadata.label' }),
+        msg({ message: `Кем обновлено`, context: 'fieldMetadata.label' }),
       ),
       description: i18nLabel(
         msg({
-          message: `The workspace member who last updated the record`,
+          message: `Участник, последним изменивший запись`,
           context: 'fieldMetadata.description',
         }),
       ),
@@ -263,7 +263,7 @@ export const buildDashboardStandardFlatFieldMetadatas = ({
       fieldName: 'searchVector',
       type: FieldMetadataType.TS_VECTOR,
       label: i18nLabel(
-        msg({ message: `Search vector`, context: 'fieldMetadata.label' }),
+        msg({ message: `Поисковый вектор`, context: 'fieldMetadata.label' }),
       ),
       description: i18nLabel(
         msg({

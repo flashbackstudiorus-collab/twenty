@@ -41,10 +41,10 @@ export const buildMessageChannelMessageAssociationStandardFlatFieldMetadatas =
         fieldName: 'id',
         type: FieldMetadataType.UUID,
         label: i18nLabel(
-          msg({ message: `Id`, context: 'fieldMetadata.label' }),
+          msg({ message: `ID`, context: 'fieldMetadata.label' }),
         ),
         description: i18nLabel(
-          msg({ message: `Id`, context: 'fieldMetadata.description' }),
+          msg({ message: `ID`, context: 'fieldMetadata.description' }),
         ),
         icon: 'Icon123',
         isSystem: true,
@@ -64,11 +64,11 @@ export const buildMessageChannelMessageAssociationStandardFlatFieldMetadatas =
         fieldName: 'createdAt',
         type: FieldMetadataType.DATE_TIME,
         label: i18nLabel(
-          msg({ message: `Creation date`, context: 'fieldMetadata.label' }),
+          msg({ message: `Дата создания`, context: 'fieldMetadata.label' }),
         ),
         description: i18nLabel(
           msg({
-            message: `Creation date`,
+            message: `Дата создания`,
             context: 'fieldMetadata.description',
           }),
         ),
@@ -91,11 +91,11 @@ export const buildMessageChannelMessageAssociationStandardFlatFieldMetadatas =
         fieldName: 'updatedAt',
         type: FieldMetadataType.DATE_TIME,
         label: i18nLabel(
-          msg({ message: `Last update`, context: 'fieldMetadata.label' }),
+          msg({ message: `Дата обновления`, context: 'fieldMetadata.label' }),
         ),
         description: i18nLabel(
           msg({
-            message: `Last time the record was changed`,
+            message: `Дата последнего изменения записи`,
             context: 'fieldMetadata.description',
           }),
         ),
@@ -118,7 +118,7 @@ export const buildMessageChannelMessageAssociationStandardFlatFieldMetadatas =
         fieldName: 'deletedAt',
         type: FieldMetadataType.DATE_TIME,
         label: i18nLabel(
-          msg({ message: `Deleted at`, context: 'fieldMetadata.label' }),
+          msg({ message: `Дата удаления`, context: 'fieldMetadata.label' }),
         ),
         description: i18nLabel(
           msg({
@@ -144,11 +144,11 @@ export const buildMessageChannelMessageAssociationStandardFlatFieldMetadatas =
         fieldName: 'createdBy',
         type: FieldMetadataType.ACTOR,
         label: i18nLabel(
-          msg({ message: `Created by`, context: 'fieldMetadata.label' }),
+          msg({ message: `Кем создано`, context: 'fieldMetadata.label' }),
         ),
         description: i18nLabel(
           msg({
-            message: `The creator of the record`,
+            message: `Автор записи`,
             context: 'fieldMetadata.description',
           }),
         ),
@@ -174,11 +174,11 @@ export const buildMessageChannelMessageAssociationStandardFlatFieldMetadatas =
         fieldName: 'updatedBy',
         type: FieldMetadataType.ACTOR,
         label: i18nLabel(
-          msg({ message: `Updated by`, context: 'fieldMetadata.label' }),
+          msg({ message: `Кем обновлено`, context: 'fieldMetadata.label' }),
         ),
         description: i18nLabel(
           msg({
-            message: `The workspace member who last updated the record`,
+            message: `Участник, последним изменивший запись`,
             context: 'fieldMetadata.description',
           }),
         ),
@@ -204,7 +204,7 @@ export const buildMessageChannelMessageAssociationStandardFlatFieldMetadatas =
         fieldName: 'position',
         type: FieldMetadataType.POSITION,
         label: i18nLabel(
-          msg({ message: `Position`, context: 'fieldMetadata.label' }),
+          msg({ message: `Позиция`, context: 'fieldMetadata.label' }),
         ),
         description: i18nLabel(
           msg({
@@ -229,7 +229,7 @@ export const buildMessageChannelMessageAssociationStandardFlatFieldMetadatas =
         fieldName: 'searchVector',
         type: FieldMetadataType.TS_VECTOR,
         label: i18nLabel(
-          msg({ message: `Search vector`, context: 'fieldMetadata.label' }),
+          msg({ message: `Поисковый вектор`, context: 'fieldMetadata.label' }),
         ),
         description: i18nLabel(
           msg({
