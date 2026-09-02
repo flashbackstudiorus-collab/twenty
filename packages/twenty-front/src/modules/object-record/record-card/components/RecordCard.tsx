@@ -7,12 +7,16 @@ const StyledBoardCard = styled.div<{
 }>`
   --record-card-background-color: ${themeCssVariables.background.secondary};
 
-  background-color: color-mix(in srgb, var(--record-card-background-color) 72%, transparent);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid ${themeCssVariables.border.color.light};
-  border-radius: ${themeCssVariables.border.radius.lg};
-  box-shadow: ${themeCssVariables.boxShadow.light};
+  background-color: color-mix(in srgb, var(--record-card-background-color) 56%, transparent);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid color-mix(in srgb, white 85%, transparent);
+  border-radius: ${themeCssVariables.border.radius.xl};
+  box-shadow:
+    0px 20px 45px 0px rgba(15, 23, 42, 0.1),
+    0px 2px 6px 0px rgba(15, 23, 42, 0.05),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.9),
+    inset 0px 0px 0px 1px rgba(255, 255, 255, 0.25);
   color: ${themeCssVariables.font.color.primary};
   cursor: pointer;
   opacity: ${({ isDragging }) => (isDragging ? DRAG_SOURCE_OPACITY : 1)};
@@ -35,8 +39,12 @@ const StyledBoardCard = styled.div<{
   }
 
   &:hover {
-    border: 1px solid ${themeCssVariables.border.color.strong};
-    box-shadow: ${themeCssVariables.boxShadow.strong};
+    border: 1px solid color-mix(in srgb, white 85%, transparent);
+    box-shadow:
+      0px 26px 55px 0px rgba(15, 23, 42, 0.16),
+      0px 4px 10px 0px rgba(15, 23, 42, 0.08),
+      inset 0px 1px 0px 0px rgba(255, 255, 255, 0.9),
+      inset 0px 0px 0px 1px rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
 
     &[data-active='true'] {
