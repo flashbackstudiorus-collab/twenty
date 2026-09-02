@@ -18,7 +18,7 @@ import { RECORD_BOARD_COLUMN_DND_TYPE } from '@/object-record/record-board/recor
 import { DND_KIT_COLLISION_PRIORITY } from '@/ui/utilities/drag-and-drop/constants/DndKitCollisionPriority';
 
 const StyledColumn = styled.div`
-  background-color: ${themeCssVariables.background.primary};
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   max-width: var(

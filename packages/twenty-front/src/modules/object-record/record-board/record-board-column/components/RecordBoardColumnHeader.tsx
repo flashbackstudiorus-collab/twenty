@@ -73,7 +73,7 @@ const StyledHeaderActions = styled.div`
 `;
 
 const StyledHeaderContainer = styled.div`
-  background: ${themeCssVariables.background.primary};
+  background: transparent;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -86,7 +86,7 @@ const StyledLeftContainer = styled.div`
 `;
 
 const StyledColumn = styled.div`
-  background-color: ${themeCssVariables.background.primary};
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   max-width: var(

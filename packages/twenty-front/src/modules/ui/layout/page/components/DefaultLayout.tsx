@@ -15,8 +15,12 @@ import { Outlet } from 'react-router-dom';
 import { themeCssVariables } from 'twenty-ui/theme-constants';
 const StyledLayout = styled.div`
   background-color: ${themeCssVariables.grayScale.gray3};
-  background-image: radial-gradient(${themeCssVariables.border.color.medium} 1px, transparent 1px);
-  background-size: 22px 22px;
+  background-image:
+    radial-gradient(ellipse 60% 50% at 15% 0%, ${themeCssVariables.accent.tertiary} 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 15%, ${themeCssVariables.accent.quaternary} 0%, transparent 70%),
+    radial-gradient(${themeCssVariables.border.color.strong} 1.3px, transparent 1.3px);
+  background-size: auto, auto, 22px 22px;
+  background-attachment: fixed, fixed, local;
   display: flex;
   flex-direction: column;
   height: calc(100dvh / var(--t-zoom, 1));
