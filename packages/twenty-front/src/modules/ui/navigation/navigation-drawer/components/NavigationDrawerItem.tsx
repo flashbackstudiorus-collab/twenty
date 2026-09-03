@@ -83,7 +83,9 @@ type StyledItemProps = Pick<
 const StyledItem = styled.button<StyledItemProps>`
   align-items: center;
   background: ${({ active }) =>
-    active ? themeCssVariables.background.transparent.light : 'transparent'};
+    active
+      ? `color-mix(in srgb, ${themeCssVariables.accent.primary} 10%, transparent)`
+      : 'transparent'};
   border: ${({ isSelectedInEditMode }) =>
     isSelectedInEditMode
       ? `1px solid ${themeCssVariables.color.blue}`
@@ -107,6 +109,10 @@ const StyledItem = styled.button<StyledItemProps>`
   display: flex;
   font-family: ${themeCssVariables.font.family};
   font-size: ${themeCssVariables.font.size.md};
+  font-weight: ${({ active }) =>
+    active
+      ? themeCssVariables.font.weight.semiBold
+      : themeCssVariables.font.weight.regular};
   height: ${themeCssVariables.spacing[7]};
   margin-top: ${({ indentationLevel }) =>
     indentationLevel === 2 ? '2px' : '0'};
