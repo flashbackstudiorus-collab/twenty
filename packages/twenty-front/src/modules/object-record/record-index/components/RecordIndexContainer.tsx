@@ -30,6 +30,25 @@ const StyledContainerWithPadding = styled.div`
   min-height: 0;
 `;
 
+const StyledTableCardWrapper = styled.div`
+  background-color: ${themeCssVariables.background.primary};
+  border: 1px solid color-mix(in srgb, white 85%, transparent);
+  border-radius: ${themeCssVariables.border.radius.xl};
+  box-shadow:
+    0px 20px 45px 0px rgba(15, 23, 42, 0.1),
+    0px 2px 6px 0px rgba(15, 23, 42, 0.05),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.9),
+    inset 0px 0px 0px 1px rgba(255, 255, 255, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: ${themeCssVariables.spacing[2]} ${themeCssVariables.spacing[4]}
+    ${themeCssVariables.spacing[4]};
+  min-height: 0;
+  overflow: hidden;
+`;
+
 export const RecordIndexContainer = () => {
   const recordIndexViewType = useAtomStateValue(recordIndexViewTypeState);
 
@@ -49,7 +68,9 @@ export const RecordIndexContainer = () => {
         <>
           <RecordIndexFiltersToContextStoreEffect />
           {recordIndexViewType === ViewType.TABLE && (
-            <RecordIndexTableContainer recordTableId={recordIndexId} />
+            <StyledTableCardWrapper>
+              <RecordIndexTableContainer recordTableId={recordIndexId} />
+            </StyledTableCardWrapper>
           )}
           {recordIndexViewType === ViewType.KANBAN && (
             <StyledContainerWithPadding>
