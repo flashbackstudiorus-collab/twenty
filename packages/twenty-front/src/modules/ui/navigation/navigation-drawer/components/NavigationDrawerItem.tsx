@@ -83,6 +83,8 @@ type StyledItemProps = Pick<
 const StyledItem = styled.button<StyledItemProps>`
   align-items: center;
   background: ${({ active }) =>
+    active ? themeCssVariables.accent.quaternary : 'transparent'};
+  background: ${({ active }) =>
     active
       ? `color-mix(in srgb, ${themeCssVariables.accent.primary} 10%, transparent)`
       : 'transparent'};
