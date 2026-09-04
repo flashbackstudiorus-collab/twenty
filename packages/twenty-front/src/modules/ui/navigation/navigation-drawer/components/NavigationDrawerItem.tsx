@@ -9,11 +9,10 @@ import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
 import { useSetAtomState } from '@/ui/utilities/state/jotai/hooks/useSetAtomState';
 import { styled } from '@linaria/react';
 import { t } from '@lingui/core/macro';
-import { isNonEmptyString } from '@sniptt/guards';
 import { type JSX, type ReactNode, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { isDefined } from 'twenty-shared/utils';
-import { Pill, TintedIconTile } from 'twenty-ui/data-display';
+import { Pill } from 'twenty-ui/data-display';
 import { type IconComponent, type TablerIconsProps } from 'twenty-ui/icon';
 import {
   AppTooltip,
@@ -260,7 +259,6 @@ export const NavigationDrawerItem = ({
   secondaryLabel,
   indentationLevel = DEFAULT_INDENTATION_LEVEL,
   Icon,
-  iconColor,
   withIconBackground = false,
   to,
   onClick,
@@ -362,11 +360,7 @@ export const NavigationDrawerItem = ({
           )}
 
           {Icon &&
-            (isNonEmptyString(iconColor) ? (
-              <StyledIcon>
-                <TintedIconTile Icon={Icon} color={iconColor} />
-              </StyledIcon>
-            ) : withIconBackground ? (
+            (withIconBackground ? (
               <StyledIcon>
                 <StyledIconBackgroundTile>
                   <Icon

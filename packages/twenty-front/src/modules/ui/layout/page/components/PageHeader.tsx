@@ -21,7 +21,7 @@ import {
 
 const StyledTopBarContainer = styled.div<{ isMobile: boolean }>`
   align-items: center;
-  background: ${themeCssVariables.background.noisy};
+  background: transparent;
   color: ${themeCssVariables.font.color.primary};
   display: flex;
   flex-direction: row;
