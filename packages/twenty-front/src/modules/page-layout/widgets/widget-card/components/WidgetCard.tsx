@@ -52,16 +52,16 @@ const StyledWidgetCard = styled.div<WidgetCardStyledProps>`
       return `linear-gradient(0deg, ${themeCssVariables.background.transparent.lighter} 0%, ${themeCssVariables.background.transparent.lighter} 100%), ${themeCssVariables.background.secondary}`;
     }
     return shouldUseSecondaryBackground(props)
-      ? `color-mix(in srgb, ${themeCssVariables.background.secondary} 60%, transparent)`
+      ? `color-mix(in srgb, ${themeCssVariables.background.secondary} 40%, transparent)`
       : 'transparent';
   }};
   -webkit-backdrop-filter: ${(props) =>
     shouldUseSecondaryBackground(props) && !(props.isEditable && props.isDragging)
-      ? 'blur(24px) saturate(160%)'
+      ? 'blur(10px) saturate(160%)'
       : 'none'};
   backdrop-filter: ${(props) =>
     shouldUseSecondaryBackground(props) && !(props.isEditable && props.isDragging)
-      ? 'blur(24px) saturate(160%)'
+      ? 'blur(10px) saturate(160%)'
       : 'none'};
 
   // Declared only when the card actually paints a surface, so a transparent

@@ -14,6 +14,9 @@ export const StyledCell = styled.div<{
   background: ${({ backgroundColor, isDragging }) =>
     isDragging ? 'transparent' : backgroundColor};
 
+  -webkit-backdrop-filter: blur(6px) saturate(150%);
+  backdrop-filter: blur(6px) saturate(150%);
+
   border-bottom: 1px solid
     ${({ borderColor, hasBottomBorder, isDragging }) =>
       hasBottomBorder && !isDragging ? borderColor : 'transparent'};
@@ -46,9 +49,11 @@ export const RecordTableCellStyleWrapper = ({
 } & React.ComponentProps<'div'>) => {
   const { theme } = useContext(ThemeContext);
 
+  // Translucent (not solid theme.background.primary) so the Electrotech
+  // flickering-grid background shows through table cells too.
   const tdBackgroundColor = isSelected
     ? theme.accent.quaternary
-    : theme.background.primary;
+    : `color-mix(in srgb, ${theme.background.primary} 50%, transparent)`;
 
   const borderColor = theme.border.color.light;
 

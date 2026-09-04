@@ -31,9 +31,9 @@ const StyledShowPageRightContainer = styled.div`
 `;
 
 const StyledContentContainer = styled.div<{ isInSidePanel: boolean }>`
-  background: color-mix(in srgb, ${themeCssVariables.background.primary} 82%, transparent);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  backdrop-filter: blur(18px) saturate(160%);
+  background: color-mix(in srgb, ${themeCssVariables.background.primary} 45%, transparent);
+  -webkit-backdrop-filter: blur(8px) saturate(160%);
+  backdrop-filter: blur(8px) saturate(160%);
   flex: 1;
   overflow-y: auto;
 `;
