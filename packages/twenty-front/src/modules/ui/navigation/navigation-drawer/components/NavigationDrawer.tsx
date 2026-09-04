@@ -32,7 +32,7 @@ const StyledAnimatedContainer = styled.div<{
   isResizing: boolean;
 }>`
   background-color: ${themeCssVariables.background.primary};
-  background-color: color-mix(in srgb, ${themeCssVariables.background.primary} 40%, transparent);
+  background-color: color-mix(in srgb, ${themeCssVariables.background.primary} 62%, transparent);
   -webkit-backdrop-filter: saturate(160%);
   backdrop-filter: saturate(160%);
   border-right: 1px solid ${themeCssVariables.border.color.light};
