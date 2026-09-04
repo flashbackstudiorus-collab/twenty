@@ -50,8 +50,8 @@ const StyledMainCardWrapper = styled.div`
 // oxlint-disable-next-line twenty/no-hardcoded-colors
 const StyledCard = styled.div`
   background: color-mix(in srgb, ${themeCssVariables.background.primary} 45%, transparent);
-  -webkit-backdrop-filter: blur(8px) saturate(160%);
-  backdrop-filter: blur(8px) saturate(160%);
+  -webkit-backdrop-filter: saturate(160%);
+  backdrop-filter: saturate(160%);
   border-radius: ${themeCssVariables.border.radius.lg} 0 0 0;
   box-shadow:
     -4px 0 4px 0 rgba(0, 0, 0, 0.006),

@@ -14,8 +14,8 @@ export const StyledCell = styled.div<{
   background: ${({ backgroundColor, isDragging }) =>
     isDragging ? 'transparent' : backgroundColor};
 
-  -webkit-backdrop-filter: blur(6px) saturate(150%);
-  backdrop-filter: blur(6px) saturate(150%);
+  -webkit-backdrop-filter: saturate(150%);
+  backdrop-filter: saturate(150%);
 
   border-bottom: 1px solid
     ${({ borderColor, hasBottomBorder, isDragging }) =>

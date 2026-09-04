@@ -19,7 +19,7 @@ const StyledCanvas = styled.canvas`
 const SQUARE_SIZE = 4;
 const GAP = 10;
 const FLICKER_CHANCE = 0.35;
-const MAX_OPACITY = 0.6;
+const MAX_OPACITY = 0.7;
 
 // Портировано из макета «Электротех» (scratchpad/electrotech_mockup.html,
 // одобренный вариант фона "Flickering Grid" — см. artwork 28.08/скрин

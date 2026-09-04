@@ -51,8 +51,8 @@ const StyledSidePanelWrapper = styled.div<{
 
 const StyledSidePanel = styled.aside<{ isShrinkingFromFullWidth: boolean }>`
   background: color-mix(in srgb, ${themeCssVariables.background.primary} 40%, transparent);
-  -webkit-backdrop-filter: blur(8px) saturate(160%);
-  backdrop-filter: blur(8px) saturate(160%);
+  -webkit-backdrop-filter: saturate(160%);
+  backdrop-filter: saturate(160%);
   border-left: 1px solid ${themeCssVariables.border.color.medium};
   box-sizing: border-box;
   display: flex;

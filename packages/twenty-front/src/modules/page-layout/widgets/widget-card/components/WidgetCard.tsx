@@ -57,11 +57,11 @@ const StyledWidgetCard = styled.div<WidgetCardStyledProps>`
   }};
   -webkit-backdrop-filter: ${(props) =>
     shouldUseSecondaryBackground(props) && !(props.isEditable && props.isDragging)
-      ? 'blur(10px) saturate(160%)'
+      ? 'saturate(160%)'
       : 'none'};
   backdrop-filter: ${(props) =>
     shouldUseSecondaryBackground(props) && !(props.isEditable && props.isDragging)
-      ? 'blur(10px) saturate(160%)'
+      ? 'saturate(160%)'
       : 'none'};
 
   // Declared only when the card actually paints a surface, so a transparent

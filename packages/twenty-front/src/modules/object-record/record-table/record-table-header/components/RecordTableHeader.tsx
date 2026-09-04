@@ -15,8 +15,8 @@ import { themeCssVariables } from 'twenty-ui/theme-constants';
 // RECORD_TABLE_ROW_HEIGHT + 1 (row plus its bottom border).
 const StyledHeaderContainer = styled.div`
   background-color: color-mix(in srgb, ${themeCssVariables.background.primary} 55%, transparent);
-  -webkit-backdrop-filter: blur(8px) saturate(160%);
-  backdrop-filter: blur(8px) saturate(160%);
+  -webkit-backdrop-filter: saturate(160%);
+  backdrop-filter: saturate(160%);
   box-shadow: 0 -1px 0 ${themeCssVariables.background.primary};
   display: flex;
   flex-direction: row;

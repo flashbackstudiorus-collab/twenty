@@ -9,8 +9,8 @@ const StyledBoardCard = styled.div<{
 
   background-color: var(--record-card-background-color);
   background-color: color-mix(in srgb, var(--record-card-background-color) 40%, transparent);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: saturate(180%);
+  backdrop-filter: saturate(180%);
   border: 1px solid ${themeCssVariables.border.color.light};
   border: 1px solid color-mix(in srgb, white 85%, transparent);
   border-radius: ${themeCssVariables.border.radius.xl};

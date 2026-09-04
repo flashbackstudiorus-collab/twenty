@@ -33,8 +33,8 @@ const StyledContainerWithPadding = styled.div`
 const StyledTableCardWrapper = styled.div`
   background-color: ${themeCssVariables.background.primary};
   background-color: color-mix(in srgb, ${themeCssVariables.background.primary} 40%, transparent);
-  -webkit-backdrop-filter: blur(10px) saturate(160%);
-  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: saturate(160%);
+  backdrop-filter: saturate(160%);
   border: 1px solid ${themeCssVariables.border.color.light};
   border: 1px solid color-mix(in srgb, white 85%, transparent);
   border-radius: ${themeCssVariables.border.radius.xl};
