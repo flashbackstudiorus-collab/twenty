@@ -4,6 +4,9 @@ import { themeCssVariables } from 'twenty-ui/theme-constants';
 
 const StyledPanel = styled.div`
   background: ${themeCssVariables.background.primary};
+  background: color-mix(in srgb, ${themeCssVariables.background.primary} 82%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
   border: 1px solid ${themeCssVariables.border.color.medium};
   display: flex;
   flex-direction: column;
