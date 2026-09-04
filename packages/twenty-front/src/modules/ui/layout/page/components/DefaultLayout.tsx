@@ -16,6 +16,11 @@ import { Outlet } from 'react-router-dom';
 import { themeCssVariables } from 'twenty-ui/theme-constants';
 const StyledLayout = styled.div`
   background-color: ${themeCssVariables.background.primary};
+  /* Creates a stacking context so the z-index:-1 FlickeringGridBackground
+     canvas paints ABOVE this element's own background but below all
+     content. Without it (position:relative alone), the canvas falls into
+     the root stacking context and is buried under this white background. */
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   height: calc(100dvh / var(--t-zoom, 1));
