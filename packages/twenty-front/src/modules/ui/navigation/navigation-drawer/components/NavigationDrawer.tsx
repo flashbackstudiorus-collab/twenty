@@ -49,6 +49,23 @@ const StyledAnimatedContainer = styled.div<{
       ? `var(${NAVIGATION_DRAWER_WIDTH_VAR})`
       : `${NAVIGATION_DRAWER_COLLAPSED_WIDTH}px`};
 
+  /* Entrance on first mount only (NavigationDrawer persists across route
+     changes within DefaultLayout, so this plays once per app load, not per
+     navigation). Only opacity/translateX animate — width stays governed by
+     the transition above so this doesn't fight the resize/collapse logic. */
+  animation: navigationDrawerSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes navigationDrawerSlideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   @media (max-width: ${MOBILE_VIEWPORT}px) {
     width: ${({ isExpanded }) =>
       isExpanded ? 'calc(100vw / var(--t-zoom, 1))' : '0'};

@@ -8,6 +8,7 @@ import { LayoutCustomizationBar } from '@/layout-customization/components/Layout
 import { AppNavigationDrawer } from '@/navigation/components/AppNavigationDrawer';
 import { MobileNavigationBar } from '@/navigation/components/MobileNavigationBar';
 import { PageDragDropProvider } from '@/navigation-menu-item/display/dnd/providers/PageDragDropProvider';
+import { FlickeringGridBackground } from '@/ui/layout/page/components/FlickeringGridBackground';
 import { useShowFullscreen } from '@/ui/layout/fullscreen/hooks/useShowFullscreen';
 import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
 import { styled } from '@linaria/react';
@@ -15,9 +16,6 @@ import { Outlet } from 'react-router-dom';
 import { themeCssVariables } from 'twenty-ui/theme-constants';
 const StyledLayout = styled.div`
   background-color: ${themeCssVariables.background.primary};
-  background-image: radial-gradient(${themeCssVariables.border.color.medium} 1.3px, transparent 1.3px);
-  background-size: 22px 22px;
-  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   height: calc(100dvh / var(--t-zoom, 1));
@@ -83,6 +81,7 @@ export const DefaultLayout = () => {
     <>
       <FileUploadProvider>
         <StyledLayout>
+          <FlickeringGridBackground />
           <AppErrorBoundary FallbackComponent={AppFullScreenErrorFallback}>
             <InformationBannerIsImpersonating />
             <LayoutCustomizationBar />
