@@ -2,6 +2,7 @@ import { currentWorkspaceMemberState } from '@/auth/states/currentWorkspaceMembe
 import { SettingsCard } from '@/settings/components/SettingsCard';
 import { SettingsPageContainer } from '@/settings/components/SettingsPageContainer';
 import { SetOrChangePassword } from '@/settings/profile/components/SetOrChangePassword';
+import { BrowserPushSection } from '@/settings/profile/components/BrowserPushSection';
 import { DeleteAccount } from '@/settings/profile/components/DeleteAccount';
 import { SettingsProfileDevicesSection } from '@/settings/profile/devices/components/SettingsProfileDevicesSection';
 import { EmailField } from '@/settings/profile/components/EmailField';
@@ -68,6 +69,9 @@ export const SettingsProfile = () => {
             description={t`The email associated to your account`}
           />
           <EmailField />
+        </Section>
+        <Section>
+          <BrowserPushSection />
         </Section>
         <Section>
           <H2Title
