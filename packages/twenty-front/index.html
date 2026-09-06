@@ -1,7 +1,11 @@
 <!doctype html>
-<html lang="en" translate="no" class="light">
+<html lang="ru" translate="no" class="light">
   <head>
     <meta charset="UTF-8" />
+    <!-- The UI is Russian. Declaring lang="ru" + notranslate keeps Chrome / Yandex Browser / Google Translate
+         from auto-translating the page: translators rewrite the DOM (<font>, <ya-tr-span>) and break React's
+         reconciliation, which blanks the virtualized record tables. -->
+    <meta name="google" content="notranslate" />
 
     <link
       rel="icon"
@@ -13,22 +17,22 @@
     <link rel="manifest" href="/manifest.json" />
 
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="A modern open-source CRM" />
+    <meta name="description" content="Auto-lab CRM" />
     <meta
       property="og:image"
       content="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/social-card.png"
     />
-    <meta property="og:description" content="A modern open-source CRM" />
-    <meta property="og:title" content="Twenty" />
+    <meta property="og:description" content="Auto-lab CRM" />
+    <meta property="og:title" content="Auto-lab CRM" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:image"
       content="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/social-card.png"
     />
 
-    <meta name="twitter:description" content="A modern open-source CRM" />
-    <meta name="twitter:title" content="Twenty" />
-    <title>Twenty</title>
+    <meta name="twitter:description" content="Auto-lab CRM" />
+    <meta name="twitter:title" content="Auto-lab CRM" />
+    <title>Auto-lab CRM</title>
     <!-- BEGIN: Twenty Config -->
     <script id="twenty-env-config">
       window._env_ = {
