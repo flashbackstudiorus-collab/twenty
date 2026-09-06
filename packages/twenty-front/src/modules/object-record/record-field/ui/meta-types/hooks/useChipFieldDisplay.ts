@@ -56,6 +56,7 @@ export const useChipFieldDisplay = () => {
   }
 
   return {
+    recordId,
     objectNameSingular,
     recordStore,
     isLabelIdentifier,
