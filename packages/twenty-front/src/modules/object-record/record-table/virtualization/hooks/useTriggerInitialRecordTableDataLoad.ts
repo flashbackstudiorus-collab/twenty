@@ -17,11 +17,13 @@ import { isRecordTableInitialLoadingComponentState } from '@/object-record/recor
 import { isRecordTableScrolledHorizontallyComponentState } from '@/object-record/record-table/states/isRecordTableScrolledHorizontallyComponentState';
 import { isRecordTableScrolledVerticallyComponentState } from '@/object-record/record-table/states/isRecordTableScrolledVerticallyComponentState';
 import { updateRecordTableCSSVariable } from '@/object-record/record-table/utils/updateRecordTableCSSVariable';
+import { TABLE_VIRTUALIZATION_NUMBER_OF_RECORDS_PER_PAGE } from '@/object-record/record-table/virtualization/constants/TableVirtualizationNumberOfRecordsPerPage';
 import { useLoadRecordsToVirtualRows } from '@/object-record/record-table/virtualization/hooks/useLoadRecordsToVirtualRows';
 import { useReapplyRowSelection } from '@/object-record/record-table/virtualization/hooks/useReapplyRowSelection';
 
 import { useResetTableFocuses } from '@/object-record/record-table/virtualization/hooks/useResetTableFocuses';
 import { useResetVirtualizedRowTreadmill } from '@/object-record/record-table/virtualization/hooks/useResetVirtualizedRowTreadmill';
+import { useTriggerFetchPages } from '@/object-record/record-table/virtualization/hooks/useTriggerFetchPages';
 import { dataLoadingStatusByRealIndexComponentState } from '@/object-record/record-table/virtualization/states/dataLoadingStatusByRealIndexComponentState';
 import { dataPagesLoadedComponentState } from '@/object-record/record-table/virtualization/states/dataPagesLoadedComponentState';
 import { isInitializingVirtualTableDataLoadingComponentState } from '@/object-record/record-table/virtualization/states/isInitializingVirtualTableDataLoadingComponentState';
@@ -110,6 +112,8 @@ export const useTriggerInitialRecordTableDataLoad = () => {
   const { loadRecordsToVirtualRows } = useLoadRecordsToVirtualRows();
 
   const { reapplyRowSelection } = useReapplyRowSelection();
+
+  const { triggerFetchPagesWithoutDebounce } = useTriggerFetchPages();
 
   const totalNumberOfRecordsToVirtualizeCallbackState =
     useAtomComponentStateCallbackState(
@@ -201,7 +205,19 @@ export const useTriggerInitialRecordTableDataLoad = () => {
           reapplyRowSelection();
         }
 
-        store.set(dataPagesLoadedCallbackState, []);
+        const initialBatchPagesLoaded = isDefined(records)
+          ? Array.from(
+              {
+                length: Math.ceil(
+                  records.length /
+                    TABLE_VIRTUALIZATION_NUMBER_OF_RECORDS_PER_PAGE,
+                ),
+              },
+              (_, pageIndex) => pageIndex,
+            )
+          : [];
+
+        store.set(dataPagesLoadedCallbackState, initialBatchPagesLoaded);
 
         store.set(lastScrollPositionCallbackState, 0);
         store.set(lastRealIndexSetCallbackState, null);
@@ -217,6 +233,13 @@ export const useTriggerInitialRecordTableDataLoad = () => {
             verticalScrollInPx: 0,
           });
         }
+
+        // The first batch only covers QUERY_DEFAULT_LIMIT_RECORDS rows, but the
+        // viewport can show more than that. Every other load beyond this first
+        // one is driven by a real scroll event (RecordTableVirtualizedRowTreadmillEffect),
+        // so without this, any row visible on load but past the first batch
+        // stays an unresolved skeleton until the user scrolls.
+        await triggerFetchPagesWithoutDebounce();
       } finally {
         store.set(isInitializingVirtualTableDataLoadingCallbackState, false);
         store.set(isRecordTableInitialLoading, false);
@@ -246,6 +269,7 @@ export const useTriggerInitialRecordTableDataLoad = () => {
       reapplyRowSelection,
       recordTableId,
       recordLimit,
+      triggerFetchPagesWithoutDebounce,
     ],
   );
 
