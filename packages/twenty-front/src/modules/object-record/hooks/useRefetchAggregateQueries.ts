@@ -1,5 +1,6 @@
 import { useApolloCoreClient } from '@/object-metadata/hooks/useApolloCoreClient';
 import { getGroupByAggregateQueryName } from '@/object-record/record-aggregate/utils/getGroupByAggregateQueryName';
+import { coalesceRefetchAggregateQueries } from '@/object-record/utils/coalesceRefetchAggregateQueries';
 import { getAggregateQueryName } from '@/object-record/utils/getAggregateQueryName';
 
 export const useRefetchAggregateQueries = () => {
@@ -16,8 +17,9 @@ export const useRefetchAggregateQueries = () => {
       objectMetadataNamePlural,
     });
 
-    await apolloCoreClient.refetchQueries({
-      include: [queryName, groupByAggregateQueryName],
+    await coalesceRefetchAggregateQueries({
+      apolloCoreClient,
+      queryNames: [queryName, groupByAggregateQueryName],
     });
   };
 
